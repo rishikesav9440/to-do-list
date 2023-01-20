@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose")
 let ejs = require('ejs');
 const app = express();
+const port = process.env.PORT || 3001;
 const _ = require("lodash")
 const date = require(__dirname + "/public/js/day.js")
 mongoose.set("strictQuery", false);
@@ -130,6 +131,4 @@ else{
 
 })
 
-app.listen(5000, function () {
-    console.log("Server is Up and running on port 3000")
-})
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
